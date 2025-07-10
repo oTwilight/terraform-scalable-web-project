@@ -6,23 +6,24 @@ This project provisions a fully scalable and highly available infrastructure on 
 
 ##  Architecture Overview
 
-    ┌─────────────┐
-    │    Users    │
-    └─────┬───────┘
+      ┌──────────────┐
+      │    Users     │
+      └─────┬────────┘
             │
-    ┌──────▼──────┐
-    │     ALB     │  (Application Load Balancer)
-    └──────┬──────┘
+     ┌──────▼──────┐
+     │   ALB       │  (Application Load Balancer)
+     └──────┬──────┘
             │
-   ┌────────▼───────┐
-   │Auto Scaling EC2│  (Launch Template + ASG)
-   └────┬──────┬────┘
+   ┌────────▼────────┐
+   │ Auto Scaling EC2│  (Launch Template + ASG)
+   └────┬──────┬─────┘
         │      │
      Subnet  Subnet  (Public)
         │      │
-     ┌──▼──────▼─┐
-     │    VPC    │
-     └───────────┘
+     ┌──▼──────▼──┐
+     │   VPC      │
+     └────────────┘
+
 
 ---
 
@@ -32,7 +33,7 @@ This project provisions a fully scalable and highly available infrastructure on 
 |----------------|-------------------------------------------|
 | `vpc`          | Creates VPC, public subnets, IGW, routes  |
 | `security-groups` | Manages ALB and EC2 security groups      |
-| `alb`          | Creates Application Load Balancer + TG    |
+| `alb`          | Creates Application  Load Balancer + TG    |
 | `ec2`          | Creates Launch Template + Auto Scaling Group |
 | `s3` (optional) | Stores Terraform backend state            |
 
@@ -67,6 +68,7 @@ terraform-scalable-web/
 1. **Clone the repository**
 
 ```bash
+
 git clone https://github.com/oTwilight/terraform-scalable-web-project.git
 
 cd terraform-scalable-web
