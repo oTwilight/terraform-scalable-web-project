@@ -24,7 +24,7 @@ This project provisions a fully scalable and highly available infrastructure on 
      │    VPC    │
      └───────────┘
 
----
+
 
 ##  Modules Used
 
@@ -49,6 +49,7 @@ This project provisions a fully scalable and highly available infrastructure on 
 ### File Structure
 
 terraform-scalable-web/
+
 ├── main.tf
 ├── backend.tf
 ├── variables.tf
@@ -60,7 +61,7 @@ terraform-scalable-web/
 │ └── security-groups/
 └── .gitignore
 
----
+
 
 ##  How to Use
 
