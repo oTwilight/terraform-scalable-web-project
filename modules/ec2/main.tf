@@ -2,7 +2,7 @@ resource "aws_launch_template" "lt" {
   name_prefix            = var.template_name
   image_id               = var.ami_id
   instance_type          = var.instance_type
-  user_data              = filebase64("${path.module}/user_data.sh")
+  user_data              = local.user_data
   vpc_security_group_ids = [var.ec2_sg_id]
 }
 
