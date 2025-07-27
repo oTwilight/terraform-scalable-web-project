@@ -4,28 +4,6 @@ This project provisions a fully scalable and highly available infrastructure on 
 
 ---
 
-##  Architecture Overview
-
-    ┌─────────────┐
-    │    Users    │
-    └─────┬───────┘
-            │
-    ┌──────▼──────┐
-    │     ALB     │  (Application Load Balancer)
-    └──────┬──────┘
-            │
-   ┌────────▼───────┐
-   │Auto Scaling EC2│  (Launch Template + ASG)
-   └────┬──────┬────┘
-        │      │
-     Subnet  Subnet  (Public)
-        │      │
-     ┌──▼──────▼─┐
-     │    VPC    │
-     └───────────┘
-
-
-
 ##  Modules Used
 
 | Module         | Purpose                                   |
@@ -45,22 +23,6 @@ This project provisions a fully scalable and highly available infrastructure on 
 - Terraform ≥ 1.3.0
 - AWS CLI configured (`aws configure`)
 - An AWS account with necessary IAM permissions
-
-### File Structure
-
-terraform-scalable-web/
-
-├── main.tf
-├── backend.tf
-├── variables.tf
-├── outputs.tf
-├── modules/
-│ ├── vpc/
-│ ├── alb/
-│ ├── ec2/
-│ └── security-groups/
-└── .gitignore
-
 
 
 ##  How to Use
